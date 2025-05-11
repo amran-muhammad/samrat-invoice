@@ -248,7 +248,9 @@ function downloadPDF() {
   invoice_number = Number(invoice_number);
   invoice_number += 1
   window.localStorage.setItem('invoice_number', invoice_number)
-  window.location.reload()
+  setTimeout(()=>{
+    window.location.reload()
+  },1500)
 
 }
 
