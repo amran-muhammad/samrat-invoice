@@ -19,6 +19,17 @@
 </head>
 
 <body>
+    <div id="login-section">
+        <p>
+            <h2>Enter Your Mobile Number</h2>
+            <input class="input-text" id="mobile_number" type="text">
+            <h2>Enter Your Secret code</h2>
+            <input class="input-text" id="secret_code" type="text">
+            <br>
+            <button class="input-text" style="margin-top: 10px;" id="confirm" onclick="confirmLogin()">Confirm</button>
+
+        </p>
+    </div>
     <div id="content">
         <header>
             <h1>Invoice</h1>
@@ -96,7 +107,7 @@
             </div>
         </aside>
     </div>
-    <div>
+    <div id="download-section">
         <button class="download" id="download" onclick="downloadPDF()">Download PDF</button>
     </div>
     <script src="index.js"></script>

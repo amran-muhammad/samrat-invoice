@@ -1,4 +1,5 @@
-th, td {
+th,
+td {
   border-width: 1px;
   padding: 0.5em;
   position: relative;
@@ -7,13 +8,15 @@ th, td {
   border-style: solid;
 }
 
-table.balance:after, table.meta:after {
+table.balance:after,
+table.meta:after {
   clear: both;
   content: "";
   display: table;
 }
 
-.cut, .add {
+.cut,
+.add {
   border-width: 1px;
   display: block;
   font-size: 0.8rem;
@@ -55,10 +58,12 @@ table.balance:after, table.meta:after {
   outline: 0;
   cursor: pointer;
 }
+
 *[contenteditable]:hover {
   background: #def;
   box-shadow: 0 0 1em 0.5em #def;
 }
+
 *[contenteditable]:focus {
   background: #def;
   box-shadow: 0 0 1em 0.5em #def;
@@ -67,10 +72,12 @@ table.balance:after, table.meta:after {
 td {
   border-color: #ddd;
 }
+
 td:hover *[contenteditable] {
   background: #def;
   box-shadow: 0 0 1em 0.5em #def;
 }
+
 td:focus *[contenteditable] {
   background: #def;
   box-shadow: 0 0 1em 0.5em #def;
@@ -94,51 +101,64 @@ table {
   border-collapse: separate;
   border-spacing: 2px;
 }
+
 table.meta {
   margin: 0 0 3em;
   float: right;
   width: 36%;
 }
+
 table.meta th {
   width: 40%;
 }
+
 table.meta td {
   width: 60%;
 }
+
 table.inventory {
   margin: 0 0 3em;
   clear: both;
   width: 100%;
 }
+
 table.inventory th {
   font-weight: bold;
   text-align: center;
 }
+
 table.inventory td:nth-child(1) {
   width: 26%;
 }
+
 table.inventory td:nth-child(2) {
   width: 38%;
 }
+
 table.inventory td:nth-child(3) {
   text-align: right;
   width: 12%;
 }
+
 table.inventory td:nth-child(4) {
   text-align: right;
   width: 12%;
 }
+
 table.inventory td:nth-child(5) {
   text-align: right;
   width: 12%;
 }
+
 table.balance {
   float: right;
   width: 36%;
 }
+
 table.balance th {
   width: 50%;
 }
+
 table.balance td {
   width: 50%;
   text-align: right;
@@ -172,11 +192,13 @@ body {
 header {
   margin: 0 0 3em;
 }
+
 header:after {
   clear: both;
   content: "";
   display: table;
 }
+
 header h1 {
   background: #000;
   border-radius: 0.25em;
@@ -184,6 +206,7 @@ header h1 {
   margin: 0 0 1em;
   padding: 0.5em 0;
 }
+
 header address {
   float: left;
   font-size: 75%;
@@ -191,9 +214,11 @@ header address {
   line-height: 1.25;
   margin: 0 1em 1em 0;
 }
+
 header address p {
   margin: 0 0 0.25em;
 }
+
 header span {
   display: block;
   float: right;
@@ -202,12 +227,14 @@ header span {
   max-width: 60%;
   position: relative;
 }
+
 header img {
   display: block;
   float: right;
   max-height: 100%;
   max-width: 100%;
 }
+
 header input {
   cursor: pointer;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
@@ -222,17 +249,20 @@ header input {
 article {
   margin: 0 0 3em;
 }
+
 article address {
   margin: 0 0 3em;
   float: left;
   font-size: 125%;
   font-weight: bold;
 }
+
 article:after {
   clear: both;
   content: "";
   display: table;
 }
+
 article h1 {
   clip: rect(0 0 0 0);
   position: absolute;
@@ -241,6 +271,7 @@ article h1 {
 .add {
   margin: -2.5em 0 0;
 }
+
 .add:hover {
   background: #00adee;
 }
@@ -257,27 +288,34 @@ article h1 {
   * {
     -webkit-print-color-adjust: exact;
   }
+
   html {
     background: none;
     padding: 0;
   }
+
   body {
     box-shadow: none;
     margin: 0;
   }
+
   .add {
     display: none;
   }
+
   .cut {
     display: none;
   }
+
   span:empty {
     display: none;
   }
 }
+
 @page {
   margin: 0;
 }
+
 img.hover {
   background: #def;
   box-shadow: 0 0 1em 0.5em #def;
@@ -300,6 +338,12 @@ tr:hover .cut {
   margin-left: 34%;
   color: green;
   font-size: 30px;
+}
+
+.input-text {
+  border: 2px solid;
+  height: 30px;
+  margin-bottom: 10px;
 }
 
 /*# sourceMappingURL=style.css.map */

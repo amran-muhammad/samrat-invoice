@@ -248,9 +248,9 @@ function downloadPDF() {
   invoice_number = Number(invoice_number);
   invoice_number += 1
   window.localStorage.setItem('invoice_number', invoice_number)
-  setTimeout(()=>{
+  setTimeout(() => {
     window.location.reload()
-  },1500)
+  }, 1500)
 
 }
 
@@ -271,3 +271,53 @@ function getInvoiceNumber() {
 
 
 window.addEventListener && document.addEventListener('DOMContentLoaded', onContentLoad);
+
+
+document.getElementById('content').style = 'display: none'
+document.getElementById('download-section').style = 'display: none'
+
+const sheetId = '1p3D91XnBSuDxXudergUN1PhO3Zy_SIW63kt48DSpmjg'; // Replace with your actual sheet ID
+const url = `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?tqx=out:json`;
+let userlist = []
+
+fetch(url)
+  .then(res => res.text())
+  .then(text => {
+    const json = JSON.parse(text.substr(47).slice(0, -2)); // Clean JSONP
+    const headers = json.table.cols.map(col => col.label.toLowerCase());
+
+    // Extract rows and turn them into array of objects
+    const data = json.table.rows.map(row => {
+      const obj = {};
+      row.c.forEach((cell, i) => {
+        obj[headers[i]] = cell?.v ?? '';
+      });
+      return obj;
+    });
+
+    userlist = data; // Final array of objects
+  })
+  .catch(err => console.error('Fetch error:', err));
+
+function confirmLogin() {
+  let mobileElement = document.getElementById("mobile_number").value
+  let secretElement = document.getElementById("secret_code").value
+
+  let found = userlist.find(element => element.mobile == mobileElement && element.secret == secretElement)
+  if (found) {
+    localStorage.setItem("login", true)
+    document.getElementById("login-section").style = "display:none"
+    checkLogin()
+  }
+}
+
+
+function checkLogin() {
+  if (localStorage.getItem("login")) {
+    document.getElementById('content').style = 'display: block'
+    document.getElementById('download-section').style = 'display: block'
+    document.getElementById("login-section").style = "display:none"
+  }
+}
+
+checkLogin()
